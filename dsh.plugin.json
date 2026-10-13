@@ -1,0 +1,16 @@
+{
+  "name": "dsh-tab-tools",
+  "description": "右侧边栏标签工具：标签栏一键关闭全部标签的按钮 + 标签右键菜单（关闭其他 / 左侧 / 右侧 / 全部）",
+  "version": "0.1.0",
+  "entry": {
+    "name": "dsh-tab-tools",
+    "inject": []
+  },
+  "client": {
+    "platform": "web",
+    "inject": [
+      "@deepseek-ai/dsh-client-runtime",
+      "@deepseek-ai/dsh-client-ui-sidebar-right"
+    ]
+  }
+}

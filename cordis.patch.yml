@@ -1,0 +1,17 @@
+# dsh-tab-tools bundle patch
+#
+# Mounts the loader row for this plugin. The host half (lib/index.js) is a no-op:
+# everything this plugin does lives in the client half (lib/client.js, declared
+# through dsh.client), which plugs into DSH's OFFICIAL right Sidebar
+# (@deepseek-ai/dsh-client-ui-sidebar-right) and its docking kit:
+#   - a 28×28 「关闭全部标签」 button injected into every tab strip (after the
+#     strip's own "+", before the flexible filler);
+#   - four extra entries in a tab's right-click menu through the official
+#     `sidebar.right.tab.menu.item` slot (关闭其他 / 关闭左侧 / 关闭右侧 / 关闭全部).
+#
+# Installed through the desktop app's own plugin manager (设置 → 插件, or the
+# plugin_manager tool) or, with the app closed:
+#   dsh plugin --profile desktop add link:D:/dsh-web/插件技能安装/dsh-tab-tools
+- insert:
+    - id: dsh-tab-tools
+      name: 'dsh-tab-tools'

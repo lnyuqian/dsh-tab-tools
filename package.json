@@ -1,0 +1,52 @@
+{
+  "name": "dsh-tab-tools",
+  "version": "0.1.0",
+  "description": "DSH 右侧边栏标签工具（web / 桌面通用）：标签栏一键关闭全部标签的按钮 + 标签右键菜单追加「关闭其他 / 关闭左侧 / 关闭右侧 / 关闭全部」四项，挂在 DSH 官方右侧边栏（@deepseek-ai/dsh-client-ui-sidebar-right + docking kit）上。",
+  "license": "MIT",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lnyuqian/dsh-tab-tools.git"
+  },
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "plugin",
+    "right-sidebar",
+    "tab-tools"
+  ],
+  "main": "lib/index.js",
+  "exports": {
+    ".": {
+      "default": "./lib/index.js"
+    },
+    "./client": {
+      "default": "./lib/client.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "cordis.patch.yml",
+    "dsh.plugin.json",
+    "install-desktop.ps1",
+    "README.md",
+    "CHANGELOG.md"
+  ],
+  "scripts": {
+    "check": "node --check lib/index.js && node --check lib/client.js",
+    "test": "node test-client.mjs"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "inject": [
+        "@deepseek-ai/dsh-client-runtime",
+        "@deepseek-ai/dsh-client-ui-sidebar-right"
+      ],
+      "platform": "web"
+    }
+  }
+}
